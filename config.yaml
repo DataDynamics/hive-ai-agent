@@ -18,3 +18,23 @@ pgvector:
   database: "postgres"
   user: "postgres"
   password: "postgres"
+
+logging:
+  # 루트 로거의 최소 레벨 (DEBUG / INFO / WARNING / ERROR / CRITICAL)
+  level: "DEBUG"
+  # 로그 출력 형식
+  format: "%(asctime)s [%(levelname)-8s] %(name)s - %(message)s"
+  # 날짜/시간 형식
+  date_format: "%Y-%m-%d %H:%M:%S"
+
+  console:
+    enabled: true
+    level: "INFO"         # 콘솔에는 INFO 이상만 출력
+
+  file:
+    enabled: true
+    path: "./logs/app.log"  # 로그 파일 경로 (상대 경로 → 프로젝트 루트 기준)
+    level: "DEBUG"          # 파일에는 DEBUG 이상 모두 기록
+    when: "midnight"        # 자정마다 롤링 (일 단위)
+    backup_count: 30        # 최대 30일치 보관
+    encoding: "utf-8"
