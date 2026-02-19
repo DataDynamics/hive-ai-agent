@@ -1,0 +1,20 @@
+ollama:
+  base_url: "http://localhost:11434/v1"
+  model: "qwen2.5:7b"
+
+hive:
+  api_base_url: "http://localhost:8080"
+
+rag:
+  collection_name: "hive_knowledge"
+  knowledge_dir: "./knowledge"
+  n_results: 3
+  embedding_model: "nomic-embed-text"
+  embedding_dim: 768
+
+pgvector:
+  host: "localhost"
+  port: 5432
+  database: "postgres"
+  user: "postgres"
+  password: "postgres"
